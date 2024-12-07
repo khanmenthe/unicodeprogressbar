@@ -6,7 +6,7 @@ local unicodeProgressBar = {}
 
 --- CONSTANTS
 local BLOCKS						=	{[0] = "" --[[ Necessary as indices start at 1 ]], "▏","▎","▍","▌","▋","▊","▉","█"} -- to self: smooth right to left bars are not possible as the necessary characters do not exist in unicode
-local BACKGROUND_BLOCKS: {string}	=	{["NONE"] = "", ["MINIMAL"] = "░", ["MEDIUM"] = "▒", ["MEDIUM_REVERSED"] = "�", ["FULL"] = "▓"}
+local BACKGROUND_BLOCKS: {string}	=	{["NONE"] = "", ["TRANSPARENT"] = " ", ["MINIMAL"] = "░", ["MEDIUM"] = "▒", ["MEDIUM_REVERSED"] = "�", ["FULL"] = "▓"}
 
 local INTERVAL: number				=	1/8
 local INTERVAL_DENOMINATOR: number	=	8
