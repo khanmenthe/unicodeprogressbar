@@ -1,5 +1,7 @@
 [package]
 name = "khanmenthe/unicodeprogressbar"
+description = "Generates a unicode progress-bar"
+repository = "https://github.com/khanmenthe/unicodeprogressbar"
 version = "0.1.1"
 registry = "https://github.com/UpliftGames/wally-index"
 realm = "shared"
