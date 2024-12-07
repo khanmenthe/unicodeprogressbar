@@ -1,9 +1,18 @@
 [package]
 name = "khanmenthe/unicodeprogressbar"
 description = "Generates a unicode progress-bar"
+license = "CC BY-SA 4.0"
 repository = "https://github.com/khanmenthe/unicodeprogressbar"
 version = "0.1.1"
 registry = "https://github.com/UpliftGames/wally-index"
 realm = "shared"
+exclude = ["**"]
+include = [
+    "default.project.json",
+    "src",
+    "src/**",
+    "LICENSE",
+    "wally.toml",
+]
 
 [dependencies]
