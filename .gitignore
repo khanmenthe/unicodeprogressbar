@@ -1,6 +1,16 @@
-# Project place file
-/unicodeprogressbar.rbxlx
-
 # Roblox Studio lock files
 /*.rbxlx.lock
 /*.rbxl.lock
+
+# Ignore installed packages
+Packages/
+
+# Ignore Rojo build artifacts
+*.rbxlx
+*.rbxl
+*.rblx
+
+# Temp files
+*.tmp
+*.swp
+*.swo
