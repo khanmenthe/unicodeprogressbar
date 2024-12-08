@@ -1,19 +1,12 @@
 {
   "name": "unicodeprogressbar",
   "emitLegacyScripts": false,
-  "gameId": 4859379642,
   "tree": {
     "$className": "DataModel",
     "ReplicatedStorage": {
       "$className": "ReplicatedStorage",  
       "unicodeprogressbar": {
         "$path": "src"
-      }
-    },
-    "HttpService": {
-      "$className": "HttpService",
-      "$properties": {
-        "HttpEnabled": true
       }
     }
   }
