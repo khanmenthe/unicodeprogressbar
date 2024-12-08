@@ -1,17 +1,14 @@
---!strict
+--,!strict
 --[[ Unicode Progress-Bar Generator © 2024 by khanmenthe is licensed under CC BY-SA 4.0 ]]
 
 local unicodeProgressBar = {}
 
 
 --- CONSTANTS
-local BLOCKS						=	{[0] = "" --[[ Necessary as indices start at 1 ]], "▏","▎","▍","▌","▋","▊","▉","█"} -- to self: smooth right to left bars are not possible as the necessary characters do not exist in unicode
-local BACKGROUND_BLOCKS: {string}	=	{["NONE"] = "", ["TRANSPARENT"] = " ", ["MINIMAL"] = "░", ["MEDIUM"] = "▒", ["MEDIUM_REVERSED"] = "�", ["FULL"] = "▓"}
+local CONSTANTS	=	require(script.CONSTANTS)
+local SETTINGS	=	require(script.SETTINGS)
 
-local INTERVAL: number				=	1/8
-local INTERVAL_DENOMINATOR: number	=	8
-
-local SETTINGS = require(script.S)
+--- Private functions
 
 local function quantize(value: number, interval: number): number
 	
@@ -25,8 +22,11 @@ local function quantize(value: number, interval: number): number
 
 end
 
+--- Public functions
 -- Generates a text progress bar 
-function unicodeProgressBar.generateBar(value: number, minRangeValue: number, maxRangeValue: number, length: number, background_blocks: keyof<typeof(BACKGROUND_BLOCKS)>): string
+function unicodeProgressBar.generateBar(value: number, minRangeValue: number, maxRangeValue: number, length: number, background_block: keyof<typeof(CONSTANTS.BACKGROUND_BLOCKS)>?): string
+	background_block = 	background_block or SETTINGS.DEFAULT_BACKGROUND
+
 	local bar: string = ""
 
 	local normalizedValue: number = (value - minRangeValue) / (maxRangeValue - minRangeValue)
@@ -34,15 +34,15 @@ function unicodeProgressBar.generateBar(value: number, minRangeValue: number, ma
 
 	local scaledToLengthValueWhole: number, scaledToLengthValueMantissa: number = math.modf(scaledToLengthValue)
 
-	local quantizedScaledValueMantissa: number = quantize(scaledToLengthValueMantissa, INTERVAL)
+	local quantizedScaledValueMantissa: number = quantize(scaledToLengthValueMantissa, CONSTANTS.INTERVAL)
 
 	for _ = 1, scaledToLengthValueWhole, 1 do
-		bar ..= BLOCKS[8]
+		bar ..= CONSTANTS.BLOCKS[8]
 	end
-	bar ..= BLOCKS[quantizedScaledValueMantissa * INTERVAL_DENOMINATOR]
+	bar ..= CONSTANTS.BLOCKS[quantizedScaledValueMantissa * CONSTANTS.INTERVAL_DENOMINATOR]
 	
 	for _ = 1, length - scaledToLengthValueWhole, 1 do
-		bar ..= BACKGROUND_BLOCKS[background_blocks]
+		bar ..= CONSTANTS.BACKGROUND_BLOCKS[background_block]
 	end
 	
 	return bar

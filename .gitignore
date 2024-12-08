@@ -10,6 +10,9 @@ Packages/
 *.rbxl
 *.rblx
 
+# Rojo and Luau lsp stuff
+sourcemap.json
+
 # Temp files
 *.tmp
 *.swp
@@ -17,3 +20,12 @@ Packages/
 
 # Standard lib
 roblox.yml
+
+# Ignore logs
+*.log
+
+# Ignore Roblox Studio cache and settings
+*.rbxl.autosave
+*.rbxl.backup
+*.rbxlx.autosave
+*.rbxlx.backup
