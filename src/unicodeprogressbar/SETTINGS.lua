@@ -1,0 +1,7 @@
+local SETTINGS = {}
+
+local CONSTANTS = require(script.Parent.CONSTANTS)
+
+SETTINGS.DEFAULT_BACKGROUND = "MINIMAL" :: keyof<typeof(CONSTANTS.BACKGROUND_BLOCKS)> 
+
+return SETTINGS
