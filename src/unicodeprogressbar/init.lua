@@ -1,8 +1,8 @@
 --!strict
-
 --[[ Unicode Progress-Bar Generator © 2024 by khanmenthe is licensed under CC BY-SA 4.0 ]]
 
 local unicodeProgressBar = {}
+
 
 --- CONSTANTS
 local BLOCKS						=	{[0] = "" --[[ Necessary as indices start at 1 ]], "▏","▎","▍","▌","▋","▊","▉","█"} -- to self: smooth right to left bars are not possible as the necessary characters do not exist in unicode
@@ -11,6 +11,7 @@ local BACKGROUND_BLOCKS: {string}	=	{["NONE"] = "", ["TRANSPARENT"] = " ", ["MIN
 local INTERVAL: number				=	1/8
 local INTERVAL_DENOMINATOR: number	=	8
 
+local SETTINGS = require(script.S)
 
 local function quantize(value: number, interval: number): number
 	
@@ -46,5 +47,6 @@ function unicodeProgressBar.generateBar(value: number, minRangeValue: number, ma
 	
 	return bar
 end
+
 
 return unicodeProgressBar

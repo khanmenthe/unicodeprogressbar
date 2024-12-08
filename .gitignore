@@ -14,3 +14,6 @@ Packages/
 *.tmp
 *.swp
 *.swo
+
+# Standard lib
+roblox.yml
