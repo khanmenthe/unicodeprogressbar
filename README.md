@@ -40,6 +40,6 @@ uniprogressbar.generateBar(
         minRangeValue: number,
         maxRangeValue: number,
         length: number,
-        background_blocks: ("NONE" | "MINIMAL" | "MEDIUM" | "MEDIUM_REVERSED" | "FULL")
+        background_blocks: ("NONE" | "TRANSPARENT" | "MINIMAL" | "MEDIUM" | "MEDIUM_REVERSED" | "FULL")
     ): string
 ```
