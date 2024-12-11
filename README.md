@@ -7,6 +7,7 @@ A unicode progress-bar generator
 ## Features
 
 - Strictly typed
+- Customizable
 - Lightweight
 
 
