@@ -22,7 +22,7 @@ unicodeprogressbar = "khanmenthe/unicodeprogressbar"
 ## Usage
 
 ```luau
-local uniprogressbar = require(game:GetService("ReplicatedStorage").unicodeprogressbar)
+local uniprogressbar = require(game:GetService("ReplicatedStorage").Packages.unicodeprogressbar)
 
 uniProgress.generateBar(71, 0, 100, 32, "MINIMAL")
 --[[ RETURNS:
